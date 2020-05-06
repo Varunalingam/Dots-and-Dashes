@@ -35,14 +35,29 @@ public class quitactivity extends AppCompatActivity {
         H.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(Intent.ACTION_MAIN);
+                Intent intent = new Intent(quitactivity.this,SplashScreen.class);
                 intent.addCategory(Intent.CATEGORY_HOME);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("EXIT", true);
                 startActivity(intent);
                 finish();
             }
         }, 2000);
 
+    }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        MediaService.stop();
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        MediaService.start(getApplicationContext());
     }
     @Override
     public void onBackPressed()

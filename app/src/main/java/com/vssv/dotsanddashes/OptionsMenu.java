@@ -128,6 +128,19 @@ public class OptionsMenu extends AppCompatActivity {
 
 
     }
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        MediaService.stop();
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        MediaService.start(getApplicationContext());
+    }
 
     private void hideSystemUI() {
         // Enables regular immersive mode.

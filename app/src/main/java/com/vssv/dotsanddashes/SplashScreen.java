@@ -26,9 +26,18 @@ public class SplashScreen extends AppCompatActivity {
     public static float width;
     public static float height;
 
+    public Handler H;
+    public Runnable Rss;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (getIntent().getBooleanExtra("EXIT", false)) {
+            finish();
+            System.exit(0);
+        }
+
         SharedPreferences Se = getSharedPreferences("SettingsData",MODE_PRIVATE);
         int theme = Se.getInt("theme",0);
         if (theme == 0)
@@ -46,7 +55,7 @@ public class SplashScreen extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash_screen);
 
-        MediaService.start(MediaPlayer.create(getApplicationContext(),R.raw.bgmusic),getApplicationContext());
+        MediaService.start(getApplicationContext());
 
         hideSystemUI();
 
@@ -65,17 +74,38 @@ public class SplashScreen extends AppCompatActivity {
         E.putFloat("height",displayMetrics.heightPixels - (6*10*displayMetrics.density) - (50*displayMetrics.density) - (32 * displayMetrics.scaledDensity));
         E.commit();
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        Rss = new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreen.this,Menu.class));
-                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                startActivity(new Intent(SplashScreen.this, Menu.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();
+
             }
-        }, 2000);
+        };
+
+        H = new Handler();
+        H.postDelayed(Rss,2000);
 
 
+
+    }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        MediaService.stop();
+        H.removeCallbacks(Rss);
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        MediaService.start(getApplicationContext());
+        H = new Handler();
+        H.postDelayed(Rss,2000);
     }
 
     @Override

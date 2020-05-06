@@ -139,6 +139,19 @@ public class GameFinish extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        MediaService.stop();
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        MediaService.start(getApplicationContext());
+    }
 
     @Override
     public void onBackPressed()

@@ -188,17 +188,17 @@ public class Menu extends AppCompatActivity {
     }
 
     @Override
-    public void onStop()
+    public void onPause()
     {
-        super.onStop();
+        super.onPause();
         MediaService.stop();
     }
 
     @Override
-    public void onStart()
+    public void onResume()
     {
-        super.onStart();
-        MediaService.start(MediaPlayer.create(getApplicationContext(),R.raw.bgmusic),getApplicationContext());
+        super.onResume();
+        MediaService.start(getApplicationContext());
     }
 
 

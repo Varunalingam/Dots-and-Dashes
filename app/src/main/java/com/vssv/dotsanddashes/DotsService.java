@@ -198,7 +198,6 @@ public class DotsService extends View{
                     CompletedBoxs.add(new CompletedBoxes(MainActivity.PlayerShapes.get(MainActivity.CurrentPlayer),MainActivity.Players.get(MainActivity.CurrentPlayer),posx,posy));
                 }
             }
-
         }
         else
         {
@@ -212,12 +211,18 @@ public class DotsService extends View{
     protected void onDraw(Canvas C) {
         super.onDraw(C);
 
+        MediaService.start(getContext());
 
 
         if (firstrun) {
             height = this.getHeight() - 20;
             width = this.getWidth() - 20;
             initialize();
+            if (MainActivity.PlayerShapes.get(MainActivity.CurrentPlayer) == 0) {
+                AIPlaying = true;
+                AI = new AIService(this, MainActivity.AIMode);
+                AI.execute();
+            }
         }
 
 
@@ -432,12 +437,6 @@ public class DotsService extends View{
             iy = -1;
             memoryiy = -1;
             memoryix = -1;
-            if (MainActivity.PlayerShapes.get(MainActivity.CurrentPlayer) == 0)
-            {
-                AIPlaying = true;
-                AI = new AIService(this,MainActivity.AIMode);
-                AI.execute();
-            }
             MainActivity.Timer.cancel();
             if (checkfinish())
             {
@@ -482,8 +481,12 @@ public class DotsService extends View{
             }
             else {
                 MainActivity.Timer.start();
+                if (MainActivity.PlayerShapes.get(MainActivity.CurrentPlayer) == 0) {
+                    AIPlaying = true;
+                    AI = new AIService(this, MainActivity.AIMode);
+                    AI.execute();
+                }
             }
-
         }
         else
         {
@@ -1225,11 +1228,11 @@ class MediaService
 {
     public static MediaPlayer Player = null;
     public static Context C;
-    public static void start (MediaPlayer toplay, Context C)
+    public static void start (Context C)
     {
         MediaService.C = C;
-        if (Player != toplay) {
-            Player = toplay;
+        if (Player == null) {
+            Player = MediaPlayer.create(C,R.raw.bgmusic);
             Player.setVolume(C.getSharedPreferences("SettingsData", Context.MODE_PRIVATE).getInt("Volume", 100) / 100f, C.getSharedPreferences("SettingsData", Context.MODE_PRIVATE).getInt("Volume", 100) / 100f);
             Player.setLooping(true);
         }
@@ -1252,7 +1255,7 @@ class MediaService
     {
         if (Player != null && Player.isPlaying())
         {
-            Player.stop();
+            Player.pause();
         }
     }
 }

@@ -240,6 +240,8 @@ public class OptionsMenuAdvanced extends AppCompatActivity {
         NOP.setOnValueChangedListener(new ToggleButton.OnValueChangedListener() {
             @Override
             public void onValueChanged(int value) {
+                Vibrator V = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                V.vibrate(10);
                 E.putInt("Players",value +2);
                 E.commit();
                 E = S.edit();
@@ -471,6 +473,20 @@ public class OptionsMenuAdvanced extends AppCompatActivity {
 
         Rows.setSelection(Rowbs);
         Columns.setSelection(columnbs);
+    }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        MediaService.stop();
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        MediaService.start(getApplicationContext());
     }
 
     private void hideSystemUI() {

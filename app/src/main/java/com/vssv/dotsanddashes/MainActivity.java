@@ -191,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
         pb = ((ImageButton)findViewById(R.id.pauseb));
         rb = ((ImageButton)findViewById(R.id.Undo));
 
+
         ((ImageButton)findViewById(R.id.pauseb)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -204,6 +205,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        MediaService.stop();
+        Timer.pause();
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        MediaService.start(getApplicationContext());
+        Timer.resume();
     }
 
     public static void Updates()
