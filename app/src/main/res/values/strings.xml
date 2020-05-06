@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name"></string>
+
+    <array name="Themes">
+        <item>System</item>
+        <item>Dark</item>
+        <item>White</item>
+    </array>
+
+    <array name="Players">
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Custom</item>
+    </array>
+
+    <array name="CustomPlayers">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </array>
+
+    <array name="AI">
+        <item>Disable</item>
+        <item>Rookie</item>
+        <item>Player</item>
+        <item>Pro</item>
+    </array>
+
+    <array name="Board">
+        <item>Small</item>
+        <item>Big</item>
+    </array>
+
+    <string-array name="Undoecodes">
+        <item>No More Moves Left!!</item>
+        <item>Can\'t Undo Anymore!!</item>
+        <item>Don\'t get too Toyed with the button!!</item>
+        <item>It is not a Toy Bastard!!</item>
+        <item>Try Playing the game Once for a while!!</item>
+    </string-array>
+
+    <string-array name="PlayerNameErrorCodes">
+        <item>Mr. Blank Enter your name please!!</item>
+        <item>Enter your Name Bastard!!</item>
+        <item>Sorry Can\'t Leave Empty!!</item>
+        <item>Are you out of your gourd??</item>
+        <item>Work on it Man!! Keep a Name for yourself!!</item>
+    </string-array>
+
+    <string-array name="TimeUpHandsOff">
+        <item>Yo Take ur hands off me Time is Up!!</item>
+        <item>Time is Up!! please untouch the screen to continue!</item>
+        <item>Don\'t get too attached with the screen!!</item>
+        <item>Don\'t worry just 1 point gone you can win it Hands OFF!!</item>
+    </string-array>
+
+    <string-array name="Tips">
+        <item>Try Playing with Timer(Only for Professionals)</item>
+        <item>Remember you can\'t undo AI\'s Move!!</item>
+        <item>Playing Silent control volume in Options Menu</item>
+        <item>Like Dark mode!! Checkout the theme option</item>
+        <item>The Timer runs for 10 seconds!! Make a move before it runs out!!</item>
+        <item>Not interested in setting the game every time?? Try the Default Game Settings</item>
+        <item>Like Personal icons see our Icon Collection</item>
+        <item>Play with our AI!! It has brains (Based on what you wish for!!)</item>
+        <item>Have a lot of friends!!Try our Multiplayer mode!!</item>
+    </string-array>
+
+</resources>

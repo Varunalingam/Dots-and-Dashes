@@ -1,0 +1,111 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/Daynightblack</item>
+        <item name="mstbSecondaryColor">@color/Daynightwhite</item>
+        <item name="DotColor">@color/Daynightblack</item>
+        <item name="DotShadowColor">@color/DaynightShadow</item>
+        <item name="android:background">@color/Daynightwhite</item>
+        <item name="android:windowBackground">@color/Daynightwhite</item>
+        <item name="android:colorBackground">@color/Daynightwhite</item>
+    </style>
+
+    <style name="DialogAppTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/Daynightblack</item>
+        <item name="mstbSecondaryColor">@color/Daynightwhite</item>
+        <item name="DotColor">@color/Daynightblack</item>
+        <item name="DotShadowColor">@color/DaynightShadow</item>
+        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+        <item name="android:background">@color/Daynightwhite</item>
+        <item name="android:windowBackground">@color/Daynightwhite</item>
+        <item name="android:colorBackground">@color/Daynightwhite</item>
+    </style>
+
+    <style name="DarkTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="mstbSecondaryColor">@color/Black</item>
+        <item name="DotColor">@color/White</item>
+        <item name="DotShadowColor">#8a795d</item>
+        <item name="android:background">@color/Black</item>
+        <item name="android:windowBackground">@color/Black</item>
+        <item name="android:colorBackground">@color/Black</item>
+    </style>
+
+    <style name="DialogDarkTheme" parent="Theme.MaterialComponents.Dialog">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="mstbSecondaryColor">@color/Black</item>
+        <item name="DotColor">@color/White</item>
+        <item name="DotShadowColor">#8a795d</item>
+        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+        <item name="android:background">@color/Black</item>
+        <item name="android:windowBackground">@color/Black</item>
+        <item name="android:colorBackground">@color/Black</item>
+    </style>
+
+
+    <style name="LightTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="mstbSecondaryColor">@color/White</item>
+        <item name="DotColor">@color/Black</item>
+        <item name="DotShadowColor">#000000</item>
+        <item name="android:background">@color/White</item>
+        <item name="android:windowBackground">@color/White</item>
+        <item name="android:colorBackground">@color/White</item>
+    </style>
+
+    <style name="DialogLightTheme" parent="Theme.MaterialComponents.Light.Dialog">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="mstbSecondaryColor">@color/White</item>
+        <item name="DotColor">@color/Black</item>
+        <item name="DotShadowColor">#000000</item>
+        <item name="android:background">@color/White</item>
+        <item name="android:windowBackground">@color/White</item>
+        <item name="android:colorBackground">@color/White</item>
+        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+    </style>
+
+
+
+
+
+
+
+
+    <style name="PauseDialogAnimation">
+        <item name="android:activityOpenEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:activityOpenExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+
+    <declare-styleable name="DotsService">
+        <attr name="DotColor" format="color"/>
+        <attr name="DotRadius" format="float"/>
+        <attr name="DotShadowColor" format="color"/>
+        <attr name="Dotgap" format="integer"/>
+    </declare-styleable>
+
+</resources>
